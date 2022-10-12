@@ -18,19 +18,13 @@
 <body>
 
     <div class="container-fluid" style="text-align: center;">
-        <h1 style="font-family: OCR A Std, monospace">Meghanaa Malleboina Reaction Timer</h1>
+        <h1>Meghanaa Malleboina Reaction Timer</h1>
     </div>
     <br>
-    <div class="d-flex flex-column border-light bd-highlight" style="text-align: center;">
-        <div class="col-md-12 text-align:center" style="font-family: Chalkduster, fantasy; color:darkslategray">
-            <p id="target">Your time</p>
-        </div>
-        <div class="col-md-12 text-align:center" style="font-family: Chalkduster, fantasy; color:rgb(126, 118, 5)">
-            <p id="countdown">Count
-        </div>
-    </div>
-    </div>
-    <br>
+    <p id="target">Your time</p>
+    <p id="countdown">Count
+
+        <br>
     <div class="container-fluid text-center text-align: align-items-center">
         <button type="button" class="btn btn-primary" onclick="startTime()">Start Timer</button>
         <button type="button" class="btn btn-warning" onclick="recordReact()"> React Now </button>
@@ -46,10 +40,10 @@
             for (let num = 0; num < 4; num++) {
                 setTimeout(() => {
                     document.getElementById("countdown").innerHTML = num;
-                },(3 - num) * 1000);
+                }, (3 - num) * 1000);
             }
             setTimeout(() => {
-                if (myTime==undefined) {
+                if (myTime == undefined) {
                     document.getElementById("target").innerHTML = "Too Slow";
                 }
                 else {
