@@ -22,10 +22,10 @@
     </div>
     <br>
     <div class="d-flex flex-column border-light bd-highlight" style="text-align: center;">
-        <div class="col-md-12 text-align:center" style="font-family: Chalkduster, fantasy; color: darkred">
+        <div class="col-md-12 text-align:center" style="font-family: Chalkduster, fantasy; color:darkslategray">
             <p id="target">Your time</p>
         </div>
-        <div class="col-md-12 text-align:center" style="font-family: Chalkduster, fantasy; color: purple">
+        <div class="col-md-12 text-align:center" style="font-family: Chalkduster, fantasy; color:rgb(126, 118, 5)">
             <p id="countdown">Count
         </div>
     </div>
@@ -40,6 +40,23 @@
         function recordReact() {
             myTime = Date.now();
             console.log(myTime);
+        }
+        function startTime() {
+            let mytime = Date.now();
+            for (let num = 0; num < 4; num++) {
+                setTimeout(() => {
+                    document.getElementById("countdown").innerHTML = num;
+                },(3 - num) * 1000);
+            }
+            setTimeout(() => {
+                if (myTime==undefined) {
+                    document.getElementById("target").innerHTML = "Too Slow";
+                }
+                else {
+                    var buttonTime = Date.now();
+                    document.getElementById("target").innerHTML = "Time was: " + (buttonTime - myTime);
+                }
+            }, 3000);
         }
     </script>
 
